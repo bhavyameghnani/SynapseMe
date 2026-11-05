@@ -1,0 +1,6 @@
+{
+  "name": "Synapse Me — Neural Digital Twin & Context Memory Cortex",
+  "description": "An ambient neural digital twin dashboard that syncs mobile and wearable voice recordings, engineers personal context into dynamic memory lobes, and automates proactive task intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
