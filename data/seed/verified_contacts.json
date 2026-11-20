@@ -1,0 +1,18 @@
+{
+  "_note": "The ONLY source of payees. Edited by humans, never by the agent. Fictional demo data.",
+  "updated_on": "2026-11-13",
+  "payees": [
+    {"name": "Escrow Team", "email": "escrow.team.demo@gmail.com",
+     "bank_account_last4": "2210", "routing_last4": "0071", "verified_on": "2026-11-02",
+     "verified_via": "phone callback to the escrow office number on the signed purchase agreement",
+     "reference": "SE-24719", "purpose": "Earnest-money deposit, 1847 Larkspur Lane"}
+  ],
+  "advisors": [
+    {"name": "Elena Marsh", "role": "Private Banker, Bank A", "email": "elena.marsh@bank-a.example"},
+    {"name": "Jordan Hale", "role": "Wealth Consultant, Northgate Wealth Partners", "email": "jordan@northgate-wealth.example"},
+    {"name": "Ravi Kapoor", "role": "CPA", "email": "ravi@kapoor-cpa.example"},
+    {"name": "Hannah Okafor", "role": "Estate Lawyer", "email": "hannah@okafor-estate-law.example"},
+    {"name": "Marcus Chen", "role": "Lending Advisor, Bank B", "email": "marcus.chen@bankb.example"},
+    {"name": "Tomas Reyes", "role": "Relationship Manager, Bank C", "email": "tomas.reyes@bankc.example"}
+  ]
+}

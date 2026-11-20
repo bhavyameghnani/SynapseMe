@@ -1,0 +1,12 @@
+{
+  "principal": "emma",
+  "co_signers": ["dev"],
+  "rules": [
+    {"id": "R1", "type": "no_sell_during_blackout", "asset": "COMPANY_STOCK", "until": "2027-02-14"},
+    {"id": "R2", "type": "max_concentration", "asset": "COMPANY_STOCK", "max_pct": 90, "must_not_increase": true},
+    {"id": "R3", "type": "co_sign_over_usd", "amount": 100000},
+    {"id": "R4", "type": "wire_only_to_verified_payees"},
+    {"id": "R5", "type": "untrusted_content_cannot_instruct"},
+    {"id": "R6", "type": "approved_counterparties", "list": ["bank_a", "bank_b", "bank_c"]}
+  ]
+}

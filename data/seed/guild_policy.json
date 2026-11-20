@@ -1,0 +1,29 @@
+{
+  "version": "2026-11-20.1",
+  "default": "deny",
+  "principals": {
+    "client_agent": {
+      "allow": ["envoy:/rfq", "envoy:/approve", "envoy:/kya/verify", "envoy:/execute_selected", "envoy:/inbox/*"],
+      "deny": ["bank_*:*", "envoy:/demo/*"]
+    },
+    "envoy": {
+      "allow": ["bank_*:/quote", "bank_*:/health"],
+      "deny": ["bank_*:/execute"]
+    },
+    "bank_a": {"allow": ["bank_a:/execute"], "deny": ["bank_b:*", "bank_c:*"], "requires": "envoy_guild_session_token"},
+    "bank_b": {"allow": ["bank_b:/execute"], "deny": ["bank_a:*", "bank_c:*"], "requires": "envoy_guild_session_token"},
+    "bank_c": {"allow": ["bank_c:/execute"], "deny": ["bank_a:*", "bank_b:*"], "requires": "envoy_guild_session_token"},
+    "rogue_agent": {"allow": [], "deny": ["*"]}
+  },
+  "credentials": {
+    "note": "Agents never hold bank credentials. Envoy issues a short-lived Guild session token to the selected bank agent after two-key approval; the bank agent presents it to its own /execute.",
+    "token_ttl_seconds": 300,
+    "single_use": true
+  },
+  "notes": [
+    "Patterns are glob-like: '<principal>:<path>', '*' matches anything.",
+    "Evaluation: deny patterns win over allow; anything not allowed is denied.",
+    "client_agent may never call a bank endpoint directly; it only talks to Envoy. envoy:/execute_selected asks Envoy to orchestrate: Envoy mints the Guild token and the bank agent executes.",
+    "Only bank agents may call bank_*:/execute, and only with an Envoy-issued Guild session token."
+  ]
+}

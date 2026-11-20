@@ -1,0 +1,29 @@
+{
+  "principal": "emma",
+  "as_of": "2026-11-20T16:00:00-08:00",
+  "currency": "USD",
+  "total_value_usd": 12400000,
+  "concentration": {"asset": "COMPANY_STOCK", "pct": 88.0},
+  "blackout": {"asset": "COMPANY_STOCK", "until": "2027-02-14", "reason": "Quarterly insider trading blackout"},
+  "positions": [
+    {"account": "A-BRK-2291", "bank_id": "bank_a", "asset": "COMPANY_STOCK", "symbol": "LAB", "description": "Company stock (RSUs, vested), a frontier AI lab", "quantity": 44000, "price_usd": 248, "value_usd": 10912000, "restricted": true},
+    {"account": "B-INV-5530", "bank_id": "bank_b", "asset": "INDEX_FUND", "symbol": "IDX500", "description": "Broad market index fund", "quantity": 2000, "price_usd": 450, "value_usd": 900000, "cost_basis_usd": 520000, "restricted": false},
+    {"account": "A-BRK-2291", "bank_id": "bank_a", "asset": "CASH", "symbol": "USD", "description": "Cash sweep", "quantity": 150000, "price_usd": 1, "value_usd": 150000, "apy_bps": 430},
+    {"account": "B-INV-5530", "bank_id": "bank_b", "asset": "CASH", "symbol": "USD", "description": "Cash", "quantity": 100000, "price_usd": 1, "value_usd": 100000, "apy_bps": 410},
+    {"account": "C-CHK-0817", "bank_id": "bank_c", "asset": "CASH", "symbol": "USD", "description": "Checking + high-yield savings", "quantity": 100000, "price_usd": 1, "value_usd": 100000, "apy_bps": 400},
+    {"account": "C-CHK-0817", "bank_id": "bank_c", "asset": "TREASURIES", "symbol": "TBILL-1226", "description": "US Treasury bills, matures 2026-12-12", "quantity": 238000, "price_usd": 1, "value_usd": 238000, "restricted": false}
+  ],
+  "totals_by_asset": {"COMPANY_STOCK": 10912000, "INDEX_FUND": 900000, "CASH": 350000, "TREASURIES": 238000},
+  "totals_by_bank": {"bank_a": 11062000, "bank_b": 1000000, "bank_c": 338000},
+  "tax_lots": [
+    {"lot_id": "IDX-L1", "symbol": "IDX500", "asset": "INDEX_FUND", "acquired": "2021-03-15", "quantity": 800, "cost_basis_usd": 176000, "term": "long"},
+    {"lot_id": "IDX-L2", "symbol": "IDX500", "asset": "INDEX_FUND", "acquired": "2022-09-30", "quantity": 700, "cost_basis_usd": 182000, "term": "long"},
+    {"lot_id": "IDX-L3", "symbol": "IDX500", "asset": "INDEX_FUND", "acquired": "2024-06-14", "quantity": 500, "cost_basis_usd": 162000, "term": "long"},
+    {"lot_id": "LAB-V1", "symbol": "LAB", "asset": "COMPANY_STOCK", "acquired": "2024-02-15", "quantity": 12000, "cost_basis_usd": 540000, "term": "long"},
+    {"lot_id": "LAB-V2", "symbol": "LAB", "asset": "COMPANY_STOCK", "acquired": "2025-02-15", "quantity": 14000, "cost_basis_usd": 1680000, "term": "long"},
+    {"lot_id": "LAB-V3", "symbol": "LAB", "asset": "COMPANY_STOCK", "acquired": "2026-02-15", "quantity": 18000, "cost_basis_usd": 3420000, "term": "short"}
+  ],
+  "verified_payees_source": "file://data/seed/verified_contacts.json",
+  "verified_payees_note": "Payees live only in verified_contacts.json (human-edited); this file holds none.",
+  "tax_assumptions": {"ltcg_fed_pct": 15.0, "state_pct": 0.8, "note": "Simulated blended rate (~15.8%) on ~$380k gain ≈ $60k. Not tax advice."}
+}
